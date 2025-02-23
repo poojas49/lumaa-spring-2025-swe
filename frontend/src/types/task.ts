@@ -16,3 +16,8 @@ export interface Task {
     description?: string
     isComplete?: boolean
   }
+
+  export interface UpdateTaskParams {
+    id: number;
+    data: UpdateTaskInput;
+  }

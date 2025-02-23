@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { tasksApi } from '../services/api'
-import { Task } from '../types/task'
+import { CreateTaskInput, Task, UpdateTaskInput, UpdateTaskParams } from '../types/task'
 import TaskItem from '../components/TaskItem'
 import TaskForm from '../components/TaskForm'
 import styles from '../styles/Task.module.css'
@@ -23,7 +23,7 @@ const TaskList = () => {
 
   // Create task mutation
   const createTaskMutation = useMutation({
-    mutationFn: (taskData) => tasksApi.createTask(taskData),
+    mutationFn: (taskData: CreateTaskInput) => tasksApi.createTask(taskData),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['tasks'] })
       setError(null)
@@ -35,7 +35,7 @@ const TaskList = () => {
 
   // Update task mutation
   const updateTaskMutation = useMutation({
-    mutationFn: ({ id, data }) => tasksApi.updateTask(id, data),
+    mutationFn: ({ id, data }: UpdateTaskParams) => tasksApi.updateTask(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['tasks'] })
       setEditingTask(null)
