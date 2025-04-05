@@ -2,6 +2,8 @@ import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes';
+import taskRoutes from './routes/tasks.routes';
+
 
 dotenv.config();
 
@@ -19,6 +21,7 @@ app.get('/health', (_req: Request, res: Response) => {
 
 // Routes
 app.use('/auth', authRoutes);
+app.use('/tasks', taskRoutes);
 
 // Start server
 app.listen(port, () => {
