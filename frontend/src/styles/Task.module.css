@@ -1,0 +1,103 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+  }
+  
+  .taskItem.completed {
+    background-color: #f8f8f8;
+  }
+  
+  .taskContent {
+    flex-grow: 1;
+  }
+  
+  .taskTitle {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .taskDescription {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .taskActions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .primaryButton {
+    background-color: #0066cc;
+    color: white;
+  }
+  
+  .deleteButton {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .editButton {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .form {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
